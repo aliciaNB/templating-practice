@@ -11,7 +11,10 @@ require_once('vendor/autoload.php');
 $f3 = Base::instance();
 
 //Define a default route
-$f3->route('GET /', function() {
+$f3->route('GET /', function($f3) {
+    //Set a F3 variable
+    $f3->set('title', 'Practicing with Templates again');
+
     $view = new Template();
     echo $view-> render('views/home.html');
 });
